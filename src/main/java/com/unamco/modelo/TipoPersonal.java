@@ -1,5 +1,8 @@
 package com.unamco.modelo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,5 +25,5 @@ public class TipoPersonal {
 
     @OneToMany
     @JoinColumn(name = "idPersonal")
-    private Personal personal;
+    private Set<Personal> personales = new HashSet<>();
 }

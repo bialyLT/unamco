@@ -1,5 +1,8 @@
 package com.unamco.modelo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +25,6 @@ public class Pais {
 
     @OneToMany
     @JoinColumn(name = "idProvincia")
-    private Provincia provincia;
+    private Set<Provincia> provincias = new HashSet<>();
 
 }

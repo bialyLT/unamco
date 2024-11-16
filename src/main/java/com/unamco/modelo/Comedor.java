@@ -32,7 +32,7 @@ public class Comedor {
 
     @OneToMany
     @JoinColumn(name = "idTurno")
-    private Turno turno;
+    private Set<Turno> turnos = new HashSet<>();
 
     @OneToOne
     @JoinColumn(name = "idCiudad")
@@ -40,5 +40,5 @@ public class Comedor {
 
     @ManyToMany
     @JoinTable(name = "detalleUsuarioComedor", joinColumns = @JoinColumn(name = "idComedor"), inverseJoinColumns = @JoinColumn(name = "idUsuario"))
-    private Set<Comedor> usuarios = new HashSet<>();
+    private Set<Usuario> usuarios = new HashSet<>();
 }

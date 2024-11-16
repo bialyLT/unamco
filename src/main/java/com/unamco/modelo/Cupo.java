@@ -33,7 +33,7 @@ public class Cupo {
 
     @OneToMany
     @JoinColumn(name = "idPago")
-    private Pago pago;
+    private Set<Pago> pagos = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "idComensal")

@@ -1,5 +1,8 @@
 package com.unamco.modelo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,5 +25,5 @@ public class TipoSancion {
 
     @OneToMany
     @JoinColumn(name = "idSancion")
-    private Sancion Sancion;
+    private Set<Sancion> sanciones = new HashSet<>();
 }
